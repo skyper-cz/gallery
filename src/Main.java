@@ -149,97 +149,142 @@ public class Main {
 
     public static void Druhy(ActionEvent e) {
         vybrane = 2;
-
+        odkaz.setText(odkazy[1]);
+        Icon icona = new ImageIcon(String.valueOf(odkaz));
+        velkyObrazek.setIcon(icona);
+        velkyObrazek.setVisible(true);
         fr.update(fr.getGraphics());
     }
 
     public static void Treti(ActionEvent e) {
         vybrane = 3;
-
+        odkaz.setText(odkazy[2]);
+        Icon icona = new ImageIcon(String.valueOf(odkaz));
+        velkyObrazek.setIcon(icona);
+        velkyObrazek.setVisible(true);
         fr.update(fr.getGraphics());
     }
 
     public static void Ctvrty(ActionEvent e) {
         vybrane = 4;
-
+        odkaz.setText(odkazy[3]);
+        Icon icona = new ImageIcon(String.valueOf(odkaz));
+        velkyObrazek.setIcon(icona);
+        velkyObrazek.setVisible(true);
         fr.update(fr.getGraphics());
     }
 
     public static void Paty(ActionEvent e) {
         vybrane = 5;
-
+        odkaz.setText(odkazy[4]);
+        Icon icona = new ImageIcon(String.valueOf(odkaz));
+        velkyObrazek.setIcon(icona);
+        velkyObrazek.setVisible(true);
         fr.update(fr.getGraphics());
     }
 
     public static void Sesty(ActionEvent e) {
         vybrane = 6;
-
+        odkaz.setText(odkazy[5]);
+        Icon icona = new ImageIcon(String.valueOf(odkaz));
+        velkyObrazek.setIcon(icona);
+        velkyObrazek.setVisible(true);
         fr.update(fr.getGraphics());
     }
 
     public static void Sedmi(ActionEvent e) {
         vybrane = 7;
-
+        odkaz.setText(odkazy[6]);
+        Icon icona = new ImageIcon(String.valueOf(odkaz));
+        velkyObrazek.setIcon(icona);
+        velkyObrazek.setVisible(true);
         fr.update(fr.getGraphics());
     }
 
     public static void Osmy(ActionEvent e) {
         vybrane = 8;
-
+        odkaz.setText(odkazy[7]);
+        Icon icona = new ImageIcon(String.valueOf(odkaz));
+        velkyObrazek.setIcon(icona);
+        velkyObrazek.setVisible(true);
         fr.update(fr.getGraphics());
     }
 
     public static void Devaty(ActionEvent e) {
         vybrane = 9;
-
+        odkaz.setText(odkazy[8]);
+        Icon icona = new ImageIcon(String.valueOf(odkaz));
+        velkyObrazek.setIcon(icona);
+        velkyObrazek.setVisible(true);
         fr.update(fr.getGraphics());
     }
     public static void Desaty(ActionEvent e) {
         vybrane = 10;
-
+        odkaz.setText(odkazy[9]);
+        Icon icona = new ImageIcon(String.valueOf(odkaz));
+        velkyObrazek.setIcon(icona);
+        velkyObrazek.setVisible(true);
         fr.update(fr.getGraphics());
     }
     public static void Update(ActionEvent e) {
         if(vybrane == 1){
-            odkazy[0] = String.valueOf(odkaz);
-            Icon icona = new ImageIcon(odkazy[0]);
-            obrazek1 = new JButton(icona);
+            odkazy[vybrane - 1] = String.valueOf(odkaz);
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
+            obrazek1.setIcon(icona);
             fr.update(fr.getGraphics());
         }
         else if(vybrane == 2){
-
+            odkazy[vybrane - 1] = String.valueOf(odkaz);
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
+            obrazek2.setIcon(icona);
             fr.update(fr.getGraphics());
         }
         else if(vybrane == 3){
-
+            odkazy[vybrane - 1] = String.valueOf(odkaz);
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
+            obrazek3.setIcon(icona);
             fr.update(fr.getGraphics());
         }
         else if(vybrane == 4){
-
+            odkazy[vybrane - 1] = String.valueOf(odkaz);
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
+            obrazek4.setIcon(icona);
             fr.update(fr.getGraphics());
         }
         else if(vybrane == 5){
-
+            odkazy[vybrane - 1] = String.valueOf(odkaz);
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
+            obrazek5.setIcon(icona);
             fr.update(fr.getGraphics());
         }
         else if(vybrane == 6){
-
+            odkazy[vybrane - 1] = String.valueOf(odkaz);
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
+            obrazek6.setIcon(icona);
             fr.update(fr.getGraphics());
         }
         else if(vybrane == 7){
-
+            odkazy[vybrane - 1] = String.valueOf(odkaz);
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
+            obrazek7.setIcon(icona);
             fr.update(fr.getGraphics());
         }
         else if(vybrane == 8){
-
+            odkazy[vybrane - 1] = String.valueOf(odkaz);
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
+            obrazek8.setIcon(icona);
             fr.update(fr.getGraphics());
         }
         else if(vybrane == 9){
-
+            odkazy[vybrane - 1] = String.valueOf(odkaz);
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
+            obrazek9.setIcon(icona);
             fr.update(fr.getGraphics());
         }
         else if(vybrane == 10){
-
+            odkazy[vybrane - 1] = String.valueOf(odkaz);
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
+            obrazek0.setIcon(icona);
             fr.update(fr.getGraphics());
         }
     }
