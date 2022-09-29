@@ -1,5 +1,10 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class Main {
     public static String[] odkazy = new String[10];
@@ -124,7 +129,7 @@ public class Main {
         aktualizace.addActionListener(Main::Update);
         fr.add(aktualizace);
 
-        odkaz.setBounds(10, 110, 1000,25);
+        odkaz.setBounds(10, 110, 880,25);
         odkaz.setVisible(true);
         fr.add(odkaz);
 
@@ -137,90 +142,260 @@ public class Main {
 
     public static void Prvy(ActionEvent e) {
         vybrane = 1;
-        odkaz.setText(odkazy[0]);
-        Icon icona = new ImageIcon(odkazy[0]);
-        velkyObrazek.setIcon(icona);
-        velkyObrazek.setVisible(true);
+        odkaz.setText(odkazy[vybrane - 1]);
+        BufferedImage image;
+        try {
+            image = ImageIO.read(new File(odkazy[vybrane - 1]));
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+        if ((image.getWidth() / image.getHeight()) == 4 / 3){
+            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,600);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
+        else{
+            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,450);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
         fr.update(fr.getGraphics());
     }
 
     public static void Druhy(ActionEvent e) {
         vybrane = 2;
-        odkaz.setText(odkazy[1]);
-        Icon icona = new ImageIcon(odkazy[1]);
-        velkyObrazek.setIcon(icona);
-        velkyObrazek.setVisible(true);
+        odkaz.setText(odkazy[vybrane - 1]);
+        BufferedImage image;
+        try {
+            image = ImageIO.read(new File(odkazy[vybrane - 1]));
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+        if ((image.getWidth() / image.getHeight()) == 4 / 3){
+            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,600);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
+        else{
+            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,450);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
         fr.update(fr.getGraphics());
     }
 
     public static void Treti(ActionEvent e) {
         vybrane = 3;
-        odkaz.setText(odkazy[2]);
-        Icon icona = new ImageIcon(odkazy[2]);
-        velkyObrazek.setIcon(icona);
-        velkyObrazek.setVisible(true);
+        odkaz.setText(odkazy[vybrane - 1]);
+        BufferedImage image;
+        try {
+            image = ImageIO.read(new File(odkazy[vybrane - 1]));
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+        if ((image.getWidth() / image.getHeight()) == 4 / 3){
+            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,600);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
+        else{
+            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,450);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
         fr.update(fr.getGraphics());
     }
 
     public static void Ctvrty(ActionEvent e) {
         vybrane = 4;
-        odkaz.setText(odkazy[3]);
-        Icon icona = new ImageIcon(odkazy[3]);
-        velkyObrazek.setIcon(icona);
-        velkyObrazek.setVisible(true);
+        odkaz.setText(odkazy[vybrane - 1]);
+        BufferedImage image;
+        try {
+            image = ImageIO.read(new File(odkazy[vybrane - 1]));
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+        if ((image.getWidth() / image.getHeight()) == 4 / 3){
+            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,600);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
+        else{
+            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,450);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
         fr.update(fr.getGraphics());
     }
 
     public static void Paty(ActionEvent e) {
         vybrane = 5;
-        odkaz.setText(odkazy[4]);
-        Icon icona = new ImageIcon(odkazy[4]);
-        velkyObrazek.setIcon(icona);
-        velkyObrazek.setVisible(true);
+        odkaz.setText(odkazy[vybrane - 1]);
+        BufferedImage image;
+        try {
+            image = ImageIO.read(new File(odkazy[vybrane - 1]));
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+        if ((image.getWidth() / image.getHeight()) == 4 / 3){
+            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,600);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
+        else{
+            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,450);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
         fr.update(fr.getGraphics());
     }
 
     public static void Sesty(ActionEvent e) {
         vybrane = 6;
-        odkaz.setText(odkazy[5]);
-        Icon icona = new ImageIcon(odkazy[5]);
-        velkyObrazek.setIcon(icona);
-        velkyObrazek.setVisible(true);
+        odkaz.setText(odkazy[vybrane - 1]);
+        BufferedImage image;
+        try {
+            image = ImageIO.read(new File(odkazy[vybrane - 1]));
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+        if ((image.getWidth() / image.getHeight()) == 4 / 3){
+            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,600);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
+        else{
+            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,450);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
         fr.update(fr.getGraphics());
     }
 
     public static void Sedmi(ActionEvent e) {
         vybrane = 7;
-        odkaz.setText(odkazy[6]);
-        Icon icona = new ImageIcon(odkazy[6]);
-        velkyObrazek.setIcon(icona);
-        velkyObrazek.setVisible(true);
+        odkaz.setText(odkazy[vybrane - 1]);
+        BufferedImage image;
+        try {
+            image = ImageIO.read(new File(odkazy[vybrane - 1]));
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+        if ((image.getWidth() / image.getHeight()) == 4 / 3){
+            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,600);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
+        else{
+            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,450);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
         fr.update(fr.getGraphics());
     }
 
     public static void Osmy(ActionEvent e) {
         vybrane = 8;
-        odkaz.setText(odkazy[7]);
-        Icon icona = new ImageIcon(odkazy[7]);
-        velkyObrazek.setIcon(icona);
-        velkyObrazek.setVisible(true);
+        odkaz.setText(odkazy[vybrane - 1]);
+        BufferedImage image;
+        try {
+            image = ImageIO.read(new File(odkazy[vybrane - 1]));
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+        if ((image.getWidth() / image.getHeight()) == 4 / 3){
+            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,600);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
+        else{
+            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,450);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
         fr.update(fr.getGraphics());
     }
 
     public static void Devaty(ActionEvent e) {
         vybrane = 9;
-        odkaz.setText(odkazy[8]);
-        Icon icona = new ImageIcon(odkazy[8]);
-        velkyObrazek.setIcon(icona);
-        velkyObrazek.setVisible(true);
+        odkaz.setText(odkazy[vybrane - 1]);
+        BufferedImage image;
+        try {
+            image = ImageIO.read(new File(odkazy[vybrane - 1]));
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+        if ((image.getWidth() / image.getHeight()) == 4 / 3){
+            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,600);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
+        else{
+            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,450);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
         fr.update(fr.getGraphics());
     }
     public static void Desaty(ActionEvent e) {
         vybrane = 10;
-        odkaz.setText(odkazy[9]);
-        Icon icona = new ImageIcon(odkazy[9]);
-        velkyObrazek.setIcon(icona);
-        velkyObrazek.setVisible(true);
+        odkaz.setText(odkazy[vybrane - 1]);
+        BufferedImage image;
+        try {
+            image = ImageIO.read(new File(odkazy[vybrane - 1]));
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+        if ((image.getWidth() / image.getHeight()) == 4 / 3){
+            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,600);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
+        else{
+            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+            velkyObrazek.setBounds(10, 140, 800,450);
+            velkyObrazek.setIcon(new ImageIcon(vlozit));
+            velkyObrazek.setVisible(true);
+            fr.add(velkyObrazek);
+        }
         fr.update(fr.getGraphics());
     }
     public static void Update(ActionEvent e) {
