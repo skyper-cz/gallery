@@ -7,24 +7,25 @@ import java.io.File;
 import java.io.IOException;
 
 public class Main {
-    public static String[] odkazy = new String[10];
+    private static final String[] odkazy = new String[10];
 
-    public static JFrame fr = new JFrame("Galerie");
-    public static JTextField odkaz = new JTextField("");
+    private static final JFrame fr = new JFrame("Galerie");
+    private static final JTextField odkaz = new JTextField("");
 
-    public static JButton obrazek1 = new JButton("");
-    public static JButton obrazek2 = new JButton("");
-    public static JButton obrazek3 = new JButton("");
-    public static JButton obrazek4 = new JButton("");
-    public static JButton obrazek5 = new JButton("");
-    public static JButton obrazek6 = new JButton("");
-    public static JButton obrazek7 = new JButton("");
-    public static JButton obrazek8 = new JButton("");
-    public static JButton obrazek9 = new JButton("");
-    public static JButton obrazek0 = new JButton("");
-    public static JButton velkyObrazek = new JButton("");
-    public static JButton aktualizace = new JButton("Aktualizace");
-    public static int vybrane;
+    private static JButton obrazek1 = new JButton("");
+    private static JButton obrazek2 = new JButton("");
+    private static JButton obrazek3 = new JButton("");
+    private static JButton obrazek4 = new JButton("");
+    private static JButton obrazek5 = new JButton("");
+    private static JButton obrazek6 = new JButton("");
+    private static JButton obrazek7 = new JButton("");
+    private static JButton obrazek8 = new JButton("");
+    private static JButton obrazek9 = new JButton("");
+    private static JButton obrazek0 = new JButton("");
+    private static final JButton velkyObrazek1 = new JButton("");
+    private static final JButton velkyObrazek2 = new JButton("");
+    private static final JButton aktualizace = new JButton("Aktualizace");
+    private static int vybrane;
 
     public static void main(String[] args) {
         odkazy[0] = "/Users/user779/Downloads/BVP.jpg";
@@ -41,6 +42,7 @@ public class Main {
         fr.setBounds(200,100,1110,750);
         fr.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         fr.setLayout(null);
+        fr.getContentPane().setBackground(Color.gray);
         fr.setVisible(true);
         fr.setResizable(false);
 
@@ -133,361 +135,479 @@ public class Main {
         odkaz.setVisible(true);
         fr.add(odkaz);
 
-        velkyObrazek.setBounds(150, 140, 800,600);
-        velkyObrazek.setVisible(false);
-        fr.add(velkyObrazek);
+        velkyObrazek1.setBounds(150, 140, 800,600);
+        velkyObrazek1.setVisible(false);
+        fr.add(velkyObrazek1);
+        velkyObrazek2.setBounds(150, 140, 800,450);
+        velkyObrazek2.setVisible(false);
+        fr.add(velkyObrazek2);
 
         fr.update(fr.getGraphics());
     }
 
     public static void Prvy(ActionEvent e) {
         vybrane = 1;
-        odkaz.setText(odkazy[vybrane - 1]);
-        BufferedImage image;
-        try {
-            image = ImageIO.read(new File(odkazy[vybrane - 1]));
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
-        if ((image.getWidth() / image.getHeight()) == (4 / 3)){
-            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,600);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        else{
-            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,450);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        fr.add(velkyObrazek);
-        fr.update(fr.getGraphics());
+        nastavitOdkaz();
     }
 
     public static void Druhy(ActionEvent e) {
         vybrane = 2;
-        odkaz.setText(odkazy[vybrane - 1]);
-        BufferedImage image;
-        try {
-            image = ImageIO.read(new File(odkazy[vybrane - 1]));
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
-        if ((image.getWidth() / image.getHeight()) == (4 / 3)){
-            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,600);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        else{
-            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,450);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        fr.add(velkyObrazek);
-        fr.update(fr.getGraphics());
+        nastavitOdkaz();
     }
 
     public static void Treti(ActionEvent e) {
         vybrane = 3;
-        odkaz.setText(odkazy[vybrane - 1]);
-        BufferedImage image;
-        try {
-            image = ImageIO.read(new File(odkazy[vybrane - 1]));
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
-        if ((image.getWidth() / image.getHeight()) == (4 / 3)){
-            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,600);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        else{
-            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,450);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        fr.add(velkyObrazek);
-        fr.update(fr.getGraphics());
+        nastavitOdkaz();
     }
 
     public static void Ctvrty(ActionEvent e) {
         vybrane = 4;
-        odkaz.setText(odkazy[vybrane - 1]);
-        BufferedImage image;
-        try {
-            image = ImageIO.read(new File(odkazy[vybrane - 1]));
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
-        if ((image.getWidth() / image.getHeight()) == (4 / 3)){
-            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,600);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        else{
-            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,450);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        fr.add(velkyObrazek);
-        fr.update(fr.getGraphics());
+        nastavitOdkaz();
     }
 
     public static void Paty(ActionEvent e) {
         vybrane = 5;
-        odkaz.setText(odkazy[vybrane - 1]);
-        BufferedImage image;
-        try {
-            image = ImageIO.read(new File(odkazy[vybrane - 1]));
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
-        if ((image.getWidth() / image.getHeight()) == (4 / 3)){
-            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,600);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        else{
-            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,450);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        fr.add(velkyObrazek);
-        fr.update(fr.getGraphics());
+        nastavitOdkaz();
     }
 
     public static void Sesty(ActionEvent e) {
         vybrane = 6;
-        odkaz.setText(odkazy[vybrane - 1]);
-        BufferedImage image;
-        try {
-            image = ImageIO.read(new File(odkazy[vybrane - 1]));
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
-        if ((image.getWidth() / image.getHeight()) == (4 / 3)){
-            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,600);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        else{
-            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,450);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        fr.add(velkyObrazek);
-        fr.update(fr.getGraphics());
+        nastavitOdkaz();
     }
 
     public static void Sedmi(ActionEvent e) {
         vybrane = 7;
-        odkaz.setText(odkazy[vybrane - 1]);
-        BufferedImage image;
-        try {
-            image = ImageIO.read(new File(odkazy[vybrane - 1]));
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
-        if ((image.getWidth() / image.getHeight()) == (4 / 3)){
-            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,600);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        else{
-            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,450);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        fr.add(velkyObrazek);
-        fr.update(fr.getGraphics());
+        nastavitOdkaz();
     }
 
     public static void Osmy(ActionEvent e) {
         vybrane = 8;
-        odkaz.setText(odkazy[vybrane - 1]);
-        BufferedImage image;
-        try {
-            image = ImageIO.read(new File(odkazy[vybrane - 1]));
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
-        if ((image.getWidth() / image.getHeight()) == (4 / 3)){
-            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,600);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        else{
-            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,450);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        fr.add(velkyObrazek);
-        fr.update(fr.getGraphics());
+        nastavitOdkaz();
     }
 
     public static void Devaty(ActionEvent e) {
         vybrane = 9;
-        odkaz.setText(odkazy[vybrane - 1]);
-        BufferedImage image;
-        try {
-            image = ImageIO.read(new File(odkazy[vybrane - 1]));
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
-        if ((image.getWidth() / image.getHeight()) == (4 / 3)){
-            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,600);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        else{
-            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,450);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        fr.add(velkyObrazek);
-        fr.update(fr.getGraphics());
+        nastavitOdkaz();
     }
     public static void Desaty(ActionEvent e) {
         vybrane = 10;
-        odkaz.setText(odkazy[vybrane - 1]);
-        BufferedImage image;
-        try {
-            image = ImageIO.read(new File(odkazy[vybrane - 1]));
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
-        if ((image.getWidth() / image.getHeight()) == (4 / 3)){
-            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,600);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        else{
-            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
-            velkyObrazek.setBounds(150, 140, 800,450);
-            velkyObrazek.setIcon(new ImageIcon(vlozit));
-            velkyObrazek.setVisible(true);
-        }
-        fr.add(velkyObrazek);
-        fr.update(fr.getGraphics());
+        nastavitOdkaz();
     }
     public static void Update(ActionEvent e) {
         if(vybrane == 1){
             String pomocna = odkaz.getText();
-            odkazy[0] = pomocna;
-            Icon icona = new ImageIcon(odkazy[0]);
+            odkazy[vybrane -1] = pomocna;
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
             obrazek1.setIcon(icona);
             obrazek1.setVisible(true);
-            velkyObrazek.setIcon(icona);
-            velkyObrazek.setVisible(true);
-            fr.update(fr.getGraphics());
+            odkaz.setText(odkazy[vybrane - 1]);
+            BufferedImage image;
+            try {
+                image = ImageIO.read(new File(odkazy[vybrane - 1]));
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            if ((image.getWidth() / image.getHeight()) == (4 / 3)){
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else if ((image.getWidth() / image.getHeight()) == (16 / 9)){
+                Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+                velkyObrazek2.setIcon(new ImageIcon(vlozit));
+                velkyObrazek2.setVisible(true);
+                velkyObrazek1.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else{
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
         }
         else if(vybrane == 2){
             String pomocna = odkaz.getText();
-            odkazy[1] = pomocna;
-            Icon icona = new ImageIcon(odkazy[1]);
+            odkazy[vybrane -1] = pomocna;
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
             obrazek2.setIcon(icona);
             obrazek2.setVisible(true);
-            velkyObrazek.setIcon(icona);
-            velkyObrazek.setVisible(true);
-            fr.update(fr.getGraphics());
+            odkaz.setText(odkazy[vybrane - 1]);
+            BufferedImage image;
+            try {
+                image = ImageIO.read(new File(odkazy[vybrane - 1]));
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            if ((image.getWidth() / image.getHeight()) == (4 / 3)){
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else if ((image.getWidth() / image.getHeight()) == (16 / 9)){
+                Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+                velkyObrazek2.setIcon(new ImageIcon(vlozit));
+                velkyObrazek2.setVisible(true);
+                velkyObrazek1.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else{
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
         }
         else if(vybrane == 3){
             String pomocna = odkaz.getText();
-            odkazy[2] = pomocna;
-            Icon icona = new ImageIcon(odkazy[2]);
+            odkazy[vybrane -1] = pomocna;
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
             obrazek3.setIcon(icona);
             obrazek3.setVisible(true);
-            velkyObrazek.setIcon(icona);
-            velkyObrazek.setVisible(true);
-            fr.update(fr.getGraphics());
+            odkaz.setText(odkazy[vybrane - 1]);
+            BufferedImage image;
+            try {
+                image = ImageIO.read(new File(odkazy[vybrane - 1]));
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            if ((image.getWidth() / image.getHeight()) == (4 / 3)){
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else if ((image.getWidth() / image.getHeight()) == (16 / 9)){
+                Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+                velkyObrazek2.setIcon(new ImageIcon(vlozit));
+                velkyObrazek2.setVisible(true);
+                velkyObrazek1.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else{
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
         }
         else if(vybrane == 4){
             String pomocna = odkaz.getText();
-            odkazy[3] = pomocna;
-            Icon icona = new ImageIcon(odkazy[3]);
+            odkazy[vybrane -1] = pomocna;
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
             obrazek4.setIcon(icona);
             obrazek4.setVisible(true);
-            velkyObrazek.setIcon(icona);
-            velkyObrazek.setVisible(true);
-            fr.update(fr.getGraphics());
+            odkaz.setText(odkazy[vybrane - 1]);
+            BufferedImage image;
+            try {
+                image = ImageIO.read(new File(odkazy[vybrane - 1]));
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            if ((image.getWidth() / image.getHeight()) == (4 / 3)){
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else if ((image.getWidth() / image.getHeight()) == (16 / 9)){
+                Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+                velkyObrazek2.setIcon(new ImageIcon(vlozit));
+                velkyObrazek2.setVisible(true);
+                velkyObrazek1.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else{
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
         }
         else if(vybrane == 5){
             String pomocna = odkaz.getText();
-            odkazy[4] = pomocna;
-            Icon icona = new ImageIcon(odkazy[4]);
+            odkazy[vybrane -1] = pomocna;
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
             obrazek5.setIcon(icona);
             obrazek5.setVisible(true);
-            velkyObrazek.setIcon(icona);
-            velkyObrazek.setVisible(true);
-            fr.update(fr.getGraphics());
+            odkaz.setText(odkazy[vybrane - 1]);
+            BufferedImage image;
+            try {
+                image = ImageIO.read(new File(odkazy[vybrane - 1]));
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            if ((image.getWidth() / image.getHeight()) == (4 / 3)){
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else if ((image.getWidth() / image.getHeight()) == (16 / 9)){
+                Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+                velkyObrazek2.setIcon(new ImageIcon(vlozit));
+                velkyObrazek2.setVisible(true);
+                velkyObrazek1.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else{
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
         }
         else if(vybrane == 6){
             String pomocna = odkaz.getText();
-            odkazy[5] = pomocna;
-            Icon icona = new ImageIcon(odkazy[5]);
+            odkazy[vybrane -1] = pomocna;
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
             obrazek6.setIcon(icona);
             obrazek6.setVisible(true);
-            velkyObrazek.setIcon(icona);
-            velkyObrazek.setVisible(true);
-            fr.update(fr.getGraphics());
+            odkaz.setText(odkazy[vybrane - 1]);
+            BufferedImage image;
+            try {
+                image = ImageIO.read(new File(odkazy[vybrane - 1]));
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            if ((image.getWidth() / image.getHeight()) == (4 / 3)){
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else if ((image.getWidth() / image.getHeight()) == (16 / 9)){
+                Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+                velkyObrazek2.setIcon(new ImageIcon(vlozit));
+                velkyObrazek2.setVisible(true);
+                velkyObrazek1.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else{
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
         }
         else if(vybrane == 7){
             String pomocna = odkaz.getText();
-            odkazy[6] = pomocna;
-            Icon icona = new ImageIcon(odkazy[6]);
+            odkazy[vybrane -1] = pomocna;
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
             obrazek7.setIcon(icona);
             obrazek7.setVisible(true);
-            velkyObrazek.setIcon(icona);
-            velkyObrazek.setVisible(true);
-            fr.update(fr.getGraphics());
+            odkaz.setText(odkazy[vybrane - 1]);
+            BufferedImage image;
+            try {
+                image = ImageIO.read(new File(odkazy[vybrane - 1]));
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            if ((image.getWidth() / image.getHeight()) == (4 / 3)){
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else if ((image.getWidth() / image.getHeight()) == (16 / 9)){
+                Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+                velkyObrazek2.setIcon(new ImageIcon(vlozit));
+                velkyObrazek2.setVisible(true);
+                velkyObrazek1.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else{
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
         }
         else if(vybrane == 8){
             String pomocna = odkaz.getText();
-            odkazy[7] = pomocna;
-            Icon icona = new ImageIcon(odkazy[7]);
+            odkazy[vybrane -1] = pomocna;
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
             obrazek8.setIcon(icona);
             obrazek8.setVisible(true);
-            velkyObrazek.setIcon(icona);
-            velkyObrazek.setVisible(true);
-            fr.update(fr.getGraphics());
+            odkaz.setText(odkazy[vybrane - 1]);
+            BufferedImage image;
+            try {
+                image = ImageIO.read(new File(odkazy[vybrane - 1]));
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            if ((image.getWidth() / image.getHeight()) == (4 / 3)){
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else if ((image.getWidth() / image.getHeight()) == (16 / 9)){
+                Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+                velkyObrazek2.setIcon(new ImageIcon(vlozit));
+                velkyObrazek2.setVisible(true);
+                velkyObrazek1.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else{
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
         }
         else if(vybrane == 9){
             String pomocna = odkaz.getText();
-            odkazy[8] = pomocna;
-            Icon icona = new ImageIcon(odkazy[8]);
+            odkazy[vybrane -1] = pomocna;
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
             obrazek9.setIcon(icona);
             obrazek9.setVisible(true);
-            velkyObrazek.setIcon(icona);
-            velkyObrazek.setVisible(true);
-            fr.update(fr.getGraphics());
+            odkaz.setText(odkazy[vybrane - 1]);
+            BufferedImage image;
+            try {
+                image = ImageIO.read(new File(odkazy[vybrane - 1]));
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            if ((image.getWidth() / image.getHeight()) == (4 / 3)){
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else if ((image.getWidth() / image.getHeight()) == (16 / 9)){
+                Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+                velkyObrazek2.setIcon(new ImageIcon(vlozit));
+                velkyObrazek2.setVisible(true);
+                velkyObrazek1.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else{
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
         }
         else if(vybrane == 10){
             String pomocna = odkaz.getText();
-            odkazy[9] = pomocna;
-            Icon icona = new ImageIcon(odkazy[9]);
+            odkazy[vybrane -1] = pomocna;
+            Icon icona = new ImageIcon(odkazy[vybrane - 1]);
             obrazek0.setIcon(icona);
             obrazek0.setVisible(true);
-            velkyObrazek.setIcon(icona);
-            velkyObrazek.setVisible(true);
-            fr.update(fr.getGraphics());
+            odkaz.setText(odkazy[vybrane - 1]);
+            BufferedImage image;
+            try {
+                image = ImageIO.read(new File(odkazy[vybrane - 1]));
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            if ((image.getWidth() / image.getHeight()) == (4 / 3)){
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else if ((image.getWidth() / image.getHeight()) == (16 / 9)){
+                Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+                velkyObrazek2.setIcon(new ImageIcon(vlozit));
+                velkyObrazek2.setVisible(true);
+                velkyObrazek1.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
+            else{
+                Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+                velkyObrazek1.setIcon(new ImageIcon(vlozit));
+                velkyObrazek1.setVisible(true);
+                velkyObrazek2.setVisible(false);
+                fr.add(velkyObrazek1);
+                fr.add(velkyObrazek2);
+            }
         }
+    }
+
+    private static void nastavitOdkaz() {
+        odkaz.setText(odkazy[vybrane - 1]);
+        BufferedImage image;
+        try {
+            image = ImageIO.read(new File(odkazy[vybrane - 1]));
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+        if ((image.getWidth() / image.getHeight()) == (4 / 3)){
+            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+            velkyObrazek1.setIcon(new ImageIcon(vlozit));
+            velkyObrazek1.setVisible(true);
+            velkyObrazek2.setVisible(false);
+            fr.add(velkyObrazek1);
+            fr.add(velkyObrazek2);
+        }
+        else if ((image.getWidth() / image.getHeight()) == (16 / 9)){
+            Image vlozit = image.getScaledInstance(800, 450, Image.SCALE_DEFAULT);
+            velkyObrazek2.setIcon(new ImageIcon(vlozit));
+            velkyObrazek2.setVisible(true);
+            velkyObrazek1.setVisible(false);
+            fr.add(velkyObrazek1);
+            fr.add(velkyObrazek2);
+        }
+        else{
+            Image vlozit = image.getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+            velkyObrazek1.setIcon(new ImageIcon(vlozit));
+            velkyObrazek1.setVisible(true);
+            velkyObrazek2.setVisible(false);
+            fr.add(velkyObrazek1);
+            fr.add(velkyObrazek2);
+        }
+        fr.update(fr.getGraphics());
     }
 }
