@@ -138,6 +138,7 @@ public class Main {
         velkyObrazek1.setBounds(150, 140, 800,600);
         velkyObrazek1.setVisible(false);
         fr.add(velkyObrazek1);
+
         velkyObrazek2.setBounds(150, 140, 800,450);
         velkyObrazek2.setVisible(false);
         fr.add(velkyObrazek2);
